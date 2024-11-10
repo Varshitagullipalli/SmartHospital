@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Registration</title>
+</head>
+<body style="background-image: url('homepic.jpg');background-repeat:no;">
+    <h1 style="text-align: center;">Doctor Registration</h1>
+    <form method = "post" style="position:absolute;left:450px;" action = "DoctorRegister">
+        <fieldset style="width:400px">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="specialization">Specialization:</label>
+        <input type="text" id="specialization" name="specialization" required><br><br>
+        
+        <label for="profile">Brief Profile:</label>
+        <textarea id="profile" name="profile" rows="4" cols="50" required></textarea><br><br>
+        
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability" required>
+            <option>Yes</option>
+                <option>No</option>
+        </select><br><br>
+        <label for="pass">Password: <input type="password" id="pass" name="password" required></label><br><br>
+	<label for="conf">Confirm Password: <input type="password" id="conf" name="confirmation" required></label><br><br>
+        <label for="email">Email: <input type="email" name="email" id="email" required></label><br><br>
+
+        <label for="phone">Phone Number: <input type="tel" name="phone" id="phone" required></label><br>
+        <input type="submit" value="Register" style="position:relative;left:150px;">
+    </fieldset>
+    </form>
+</body>
+</html>

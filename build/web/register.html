@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <style>
+        body{
+            background-color: azure;
+        }
+       .container{
+            display:flex;
+            flex-direction: row;
+            flex-shrink: 50px 50px 50px;
+        }
+       .card{
+            display: grid;
+            position:relative;
+            grid-template-rows: auto 1fr;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin: 10px 20px;
+       }
+     .card img{
+        position: relative;
+        top: 20px;
+        width:50%;
+        height: 150px;
+        border-radius:150px;
+        left:70px;
+    }
+       .details{
+        padding: 20px 10px;
+        display: grid;
+        grid-template-rows: auto 1fr 50px;
+        grid-row-gap:15px;
+       }
+       .details-sub
+       {
+        display: grid;
+        grid-template-columns: auto auto;
+       }
+       .details-sub h5{
+        font-weight:600;
+        font-size:18px;
+        position: absolute;
+        left: 120px;
+        
+       }
+       .price{
+        text-align:right;
+       }
+       .details p{
+        color:#6f6f6f;
+        font-size:15px;
+        line-height:25px;
+        align-self:stretch;
+       }
+       .button{
+        font-size:16px;
+        font-weight:600;
+        border-radius:30px;
+        width:130px;
+        height:30px;
+        position: relative;
+        left:100px;
+       }
+       h5{
+        font-weight: 100;
+       }
+    </style>
+    <body>
+        <form method="post" action="" >
+            <div class="container">
+            <div class="card">
+                <img src="doctor.jpg">
+                <div class="details">
+                    <div class="details-sub">
+                        <h5>Doctors</h5>
+                    </div><br>
+                    <p>Elevate your healthcare delivery- provide care to patients efficiently. Improve your patient base and access.</p><br><br>
+                    <input type="button" value="Register" class="button" style="left: 80px;" onclick="window.location.href='doctorRegister.html'">
+                </div>
+            </div>
+                <div class="card">
+                    <img style="border-radius: 100px;position: relative;left: 130px;"
+                        src="patient.jpg">
+                    <div class="details">
+                        <div class="details-sub">
+                            <h5 style="position:absolute;left:200px;">Patients</h5>
+                        </div><br>
+                        <p>Elevate your healthcare experience. Take charge of your care. Select the physicians you need from a handpicked group, all from the comfort of your home.</p><br><br>
+                        <input type="button" value="Register" class="button" style="left: 150px;" onclick="window.location.href='patientRegister.html'">
+                    </div>
+                </div>
+                    <div class="card">
+                        <img style="border-radius: 150px;"
+                            src="staff.jpg">
+                        <div class="details">
+                            <div class="details-sub">
+                                <h5>Hospital staff</h5>
+                            </div><br>
+                            <p>Expand your reach. Provide your services to patients without barriers.[Nutritionist, Nurse Practitioner, Physiotherapist]</p><br><br>
+                            <input type="button" value="Register" class="button"onclick="window.location.href='hospitalStaffRegister.html'">
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </body>
+</html>

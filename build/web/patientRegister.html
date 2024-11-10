@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body style="background-image: url('homepic.jpg');background-repeat:no">
+        <form method="post" onsubmit="return validateForm()" style="position:absolute;left:450px;" action = "PatientRegister">
+	<h1 style="text-align: center;">Patient Registration</h1>
+	<fieldset style="width:400px">
+            <label for="name">Name: <input type="text" id="name" name="username" required></label><br><br>
+           <label>Gender: </label>
+	    <select id="gender" name="gender" required>
+		        <option>Male</option>
+	                <option>Female</option>
+	                <option>Other</option>
+	     </select><br><br>
+        <label>DOB: <input type="date" ></label><br><br>
+        <label>Blood Group: </label>
+	            <select id="grp" name="gender">
+		        <option>A+</option>
+	                <option>A-</option>
+	                <option>B+</option>
+                        <option>B-</option>
+	                <option>O+</option>
+	                <option>O-</option>
+                        <option>AB+</option>
+	                <option>AB-</option>
+	            </select><br><br>
+
+	<label for="pass">Password: <input type="password" id="pass" name="password" required></label><br><br>
+	<label for="conf">Confirm Password: <input type="password" id="conf" name="confirmation" required></label><br><br>
+	 <label for="email">Email: <input type="email" name="email" id="email" required></label><br><br>
+	  <label>Address: <textarea name="address" rows="3" cols="30" style="border-radius:10px;" required></textarea></label><br><br>
+	   <label for="phone">Phone Number: <input type="tel" name="phone" id="phone" required></label><br><br>
+	   <input type="submit" value="Register" style="position:relative;left:150px;">
+         </fieldset>
+        </form>
+	<script>
+		function validateForm(){
+			const usernameInput = document.getElementById('name');
+			const emailInput = document.getElementById('email');
+			const mobileInput = document.getElementById('phone');
+			const passwordInput = document.getElementById('pass');
+			const confirmPasswordInput = document.getElementById('conf');
+  			const username = usernameInput.value;
+  			const email = emailInput.value;
+  			const mobile = mobileInput.value;
+			const password = passwordInput.value;
+  			const confirmPassword = confirmPasswordInput.value;
+			const usernameRegex=/^[a-z A-Z][a-z A-Z \d]{5,}$/;
+  			if (!usernameRegex.test(username)) {
+    			alert("Username must be at least 6 characters long.");
+    			return false;
+  			}
+  			const emailRegex = /^[a-z A-Z][a-z A-Z \d]+@[a-z A-Z]+[\.](com|ac.in|co.in)$/;
+  			if (!emailRegex.test(email)) {
+    			alert("Please enter a valid email address.");
+    			return false;
+  			}
+  			const mobileRegex = /^[1-9][\d]{9}$/;
+  			if (!mobileRegex.test(mobile)) {
+    			alert("Mobile number must be 10 digits and start with 6-9.");
+    			return false;
+  			}
+			const passwordRegex=/^[A-Z a-z \d][A-Z a-z \d @ $ ! % * ? &]{5,}$/;
+			if(!passwordRegex.test(password)){
+				alert("Password start with letters and atleast length 5");
+				return false;
+			}
+  			if (password !== confirmPassword) {
+    			alert("Password and confirm password fields must match.");
+    			return false;
+  			}
+			alert("Registered successfully!!!");
+			return true;
+		}
+	</script>
+    </body>
+</html>
